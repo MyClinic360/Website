@@ -18,13 +18,15 @@ import EjaculacaoPrematura from "./pages/Forms/EjaculacaoPrematura";
 import Funcionalidades from "./pages/Funcionalidades";
 import ProgramaReabilitacao from "./pages/ProgramaReabilitacao";
 import { useRedirects } from "./components/Redirects";
+import { useScrollToHash } from "./components/ScrollToHash";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const queryClient = new QueryClient();
 
-// Componente para aplicar redirecionamentos
+// Componente para aplicar redirecionamentos e rolagem até âncoras
 const RedirectHandler = ({ children }: { children: React.ReactNode }) => {
   useRedirects();
+  useScrollToHash();
   return <>{children}</>;
 };
 
