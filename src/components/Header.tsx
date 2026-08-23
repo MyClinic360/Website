@@ -1,8 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ImgHTMLAttributes } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
+
+// React 18 não reconhece a prop camelCase `fetchPriority` (só a partir do React 19),
+// então passamos o atributo em minúsculas direto para o DOM.
+const highPriority = { fetchpriority: "high" } as ImgHTMLAttributes<HTMLImageElement>;
 
 const navLinks = [
   { label: "Home", href: "/", isPage: true },
@@ -45,7 +49,7 @@ export function Header() {
               height="48"
               loading="eager"
               decoding="async"
-              fetchPriority="high"
+              {...highPriority}
             />
           </Link>
 
