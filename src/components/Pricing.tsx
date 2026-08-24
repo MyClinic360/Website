@@ -251,7 +251,7 @@ export function Pricing() {
                     <p className="text-muted-foreground text-xs sm:text-sm mt-1 sm:mt-2">
                       {plan.period}
                     </p>
-                    <p className="text-muted-foreground/70 text-[10px] sm:text-xs mt-0.5 sm:mt-1">{plan.yearly}</p>
+                    <p className="text-muted-foreground text-[10px] sm:text-xs mt-0.5 sm:mt-1">{plan.yearly}</p>
                     
                     {plan.savings && <motion.div initial={{
                   scale: 0.8,

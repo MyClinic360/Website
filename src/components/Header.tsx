@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
 
 const navLinks = [
-  { label: "Benefícios", href: "#diferenciais" },
+  { label: "Home", href: "/", isPage: true },
+  { label: "Funcionalidades", href: "/funcionalidades", isPage: true },
   { label: "Questionários", href: "#questionarios" },
-  { label: "Perfil Público", href: "#perfil-publico" },
   { label: "Para Quem", href: "#publico" },
   { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "/contato", isPage: true },
@@ -81,7 +81,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Button size="sm" className="rounded-full group" asChild>
               <a href="https://appmyclinic360.com.br/login" target="_blank" rel="noopener noreferrer">
-                Começar agora
+                Já tenho acesso
                 <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5" />
               </a>
             </Button>
@@ -134,7 +134,7 @@ export function Header() {
           <div className="flex flex-col gap-2 pt-4 mt-2 border-t border-border/30">
             <Button className="w-full justify-center rounded-full group" asChild>
               <a href="https://appmyclinic360.com.br/login" target="_blank" rel="noopener noreferrer">
-                Começar agora
+                Já tenho acesso
                 <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5" />
               </a>
             </Button>

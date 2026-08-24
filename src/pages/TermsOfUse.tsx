@@ -10,6 +10,20 @@ const TermsOfUse = () => {
         <meta name="description" content="Termos de Uso da plataforma MyClinic360. Conheça as condições de uso, responsabilidades e direitos ao utilizar nossos serviços." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.myclinic360.com.br/termos-de-uso" />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Termos de Uso — MyClinic360" />
+        <meta property="og:description" content="Termos de Uso da plataforma MyClinic360." />
+        <meta property="og:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
+        <meta property="og:url" content="https://www.myclinic360.com.br/termos-de-uso" />
+        <meta property="og:site_name" content="MyClinic360" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Termos de Uso — MyClinic360" />
+        <meta name="twitter:description" content="Termos de Uso da plataforma MyClinic360." />
+        <meta name="twitter:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
       </Helmet>
       
       <div className="min-h-screen bg-background flex flex-col">

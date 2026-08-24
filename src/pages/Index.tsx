@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { SchemaOrg } from "@/components/SchemaOrg";
@@ -27,6 +28,26 @@ const SectionLoader = () => (
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>MyClinic360 — Plataforma Completa para Fisioterapeutas Pélvicos</title>
+        <meta name="description" content="Solução profissional para fisioterapeutas pélvicos. Prontuário digital, agenda inteligente e presença digital em um único sistema." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.myclinic360.com.br/" />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="MyClinic360 — Plataforma Completa para Fisioterapeutas Pélvicos" />
+        <meta property="og:description" content="Solução profissional para fisioterapeutas pélvicos. Prontuário digital, agenda inteligente e presença digital em um único sistema." />
+        <meta property="og:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
+        <meta property="og:url" content="https://www.myclinic360.com.br/" />
+        <meta property="og:site_name" content="MyClinic360" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="MyClinic360 — Plataforma Completa para Fisioterapeutas Pélvicos" />
+        <meta name="twitter:description" content="Solução profissional para fisioterapeutas pélvicos." />
+        <meta name="twitter:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
+      </Helmet>
       <SchemaOrg />
       <Header />
       <main role="main">

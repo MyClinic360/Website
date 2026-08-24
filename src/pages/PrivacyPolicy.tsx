@@ -10,6 +10,20 @@ const PrivacyPolicy = () => {
         <meta name="description" content="Política de Privacidade da MyClinic360. Saiba como coletamos, utilizamos, armazenamos e protegemos seus dados pessoais em conformidade com a LGPD." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.myclinic360.com.br/politica-de-privacidade" />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Política de Privacidade — MyClinic360" />
+        <meta property="og:description" content="Política de Privacidade da MyClinic360 em conformidade com a LGPD." />
+        <meta property="og:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
+        <meta property="og:url" content="https://www.myclinic360.com.br/politica-de-privacidade" />
+        <meta property="og:site_name" content="MyClinic360" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Política de Privacidade — MyClinic360" />
+        <meta name="twitter:description" content="Política de Privacidade da MyClinic360." />
+        <meta name="twitter:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
       </Helmet>
       
       <div className="min-h-screen bg-background flex flex-col">

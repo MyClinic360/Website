@@ -22,6 +22,21 @@ const Form = () => {
         <title>{title} — MyClinic360</title>
         <meta name="description" content={`Questionário ${title} - MyClinic360`} />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://www.myclinic360.com.br/forms/${formId}`} />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${title} — MyClinic360`} />
+        <meta property="og:description" content={`Questionário clínico ${title} - MyClinic360`} />
+        <meta property="og:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
+        <meta property="og:url" content={`https://www.myclinic360.com.br/forms/${formId}`} />
+        <meta property="og:site_name" content="MyClinic360" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${title} — MyClinic360`} />
+        <meta name="twitter:description" content={`Questionário clínico ${title}`} />
+        <meta name="twitter:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">

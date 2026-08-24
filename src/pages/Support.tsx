@@ -80,6 +80,20 @@ export default function Support() {
         />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://www.myclinic360.com.br/suporte" />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Suporte — MyClinic360" />
+        <meta property="og:description" content="Precisa de ajuda? Abra um chamado de suporte." />
+        <meta property="og:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
+        <meta property="og:url" content="https://www.myclinic360.com.br/suporte" />
+        <meta property="og:site_name" content="MyClinic360" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Suporte — MyClinic360" />
+        <meta name="twitter:description" content="Precisa de ajuda? Abra um chamado de suporte." />
+        <meta name="twitter:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
       </Helmet>
 
       <div className="min-h-screen bg-background relative overflow-hidden">

@@ -8,6 +8,8 @@ import {
   Globe,
   ArrowRight,
   Sparkles,
+  MessageCircle,
+  FileText,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -67,6 +69,22 @@ const modules: Module[] = [
     description:
       "Página profissional com selo verificado MyClinic360 e botão inteligente de contato.",
     gradient: "from-amber-500/20 via-amber-500/10 to-transparent",
+  },
+  {
+    icon: MessageCircle,
+    title: "Comunicação com Pacientes",
+    subtitle: "Confirmação de consultas",
+    description:
+      "Envio de lembretes e confirmações de consulta diretamente pelo WhatsApp, reduzindo faltas e melhorando a organização da agenda.",
+    gradient: "from-pink-500/20 via-pink-500/10 to-transparent",
+  },
+  {
+    icon: FileText,
+    title: "Protocolos Terapêuticos",
+    subtitle: "Protocolos inteligentes",
+    description:
+      "Geração automática de protocolos de eletroterapia e biofeedback com base em evidências científicas, considerando a disfunção e o objetivo terapêutico.",
+    gradient: "from-indigo-500/20 via-indigo-500/10 to-transparent",
   },
 ];
 
@@ -144,7 +162,7 @@ export function Modules() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5"
         >
           {modules.map((module) => (
             <motion.div
@@ -179,21 +197,9 @@ export function Modules() {
                   <h3 className="font-heading text-sm sm:text-xl font-bold text-foreground mb-1.5 sm:mb-3 group-hover:text-primary transition-colors duration-300 leading-tight">
                     {module.title}
                   </h3>
-                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-0 sm:mb-6 line-clamp-3 sm:line-clamp-none">
+                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-0 line-clamp-3 sm:line-clamp-none">
                     {module.description}
                   </p>
-
-                  {/* Modern CTA - hidden on mobile */}
-                  <a
-                    href="#"
-                    className="hidden sm:inline-flex items-center gap-2 text-primary font-medium text-xs sm:text-sm group/link"
-                  >
-                    <span className="relative">
-                      Saiba mais
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover/link:w-full transition-all duration-300" />
-                    </span>
-                    <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
-                  </a>
                 </div>
 
                 {/* Bottom accent line */}
@@ -201,6 +207,24 @@ export function Modules() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex justify-center mt-10 sm:mt-16"
+        >
+          <a
+            href="https://app.myclinic360.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary text-primary-foreground font-semibold text-sm sm:text-base shadow-soft hover:shadow-glow hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+          >
+            Conheça a plataforma
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </motion.div>
       </div>
     </section>

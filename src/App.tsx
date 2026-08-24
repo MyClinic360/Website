@@ -11,6 +11,12 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import NotFound from "./pages/NotFound";
 import IIEF5 from "./pages/Forms/IIEF5";
+import IncontinenciaUrinaria from "./pages/Forms/IncontinenciaUrinaria";
+import SaudeSexualMasculina from "./pages/Forms/SaudeSexualMasculina";
+import DesconfortoSexualFeminino from "./pages/Forms/DesconfortoSexualFeminino";
+import EjaculacaoPrematura from "./pages/Forms/EjaculacaoPrematura";
+import Funcionalidades from "./pages/Funcionalidades";
+import ProgramaReabilitacao from "./pages/ProgramaReabilitacao";
 import { useRedirects } from "./components/Redirects";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
@@ -36,7 +42,13 @@ const App = () => (
             <Route path="/suporte" element={<Support />} />
             <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
             <Route path="/termos-de-uso" element={<TermsOfUse />} />
+            <Route path="/funcionalidades" element={<Funcionalidades />} />
+            <Route path="/programa-reabilitacao-pelvica" element={<ProgramaReabilitacao />} />
             <Route path="/forms/iief-5" element={<IIEF5 />} />
+            <Route path="/forms/incontinencia-urinaria" element={<IncontinenciaUrinaria />} />
+            <Route path="/forms/saude-sexual-masculina" element={<SaudeSexualMasculina />} />
+            <Route path="/forms/desconforto-sexual-feminino" element={<DesconfortoSexualFeminino />} />
+            <Route path="/forms/ejaculacao-prematura" element={<EjaculacaoPrematura />} />
             <Route path="/forms/:formId" element={<Form />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

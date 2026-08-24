@@ -1,12 +1,14 @@
+// IIEF-5 Lead Capture Page
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Shield, Clock, Lock, Heart, Users, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import { FormHeader } from "@/components/FormHeader";
 import logo from "@/assets/logo.svg";
 
 const IIEF5 = () => {
   const handleStartAssessment = () => {
-    window.open("https://form.appmyclinic360.com.br/", "_blank");
+    window.open("https://form.appmyclinic360.com.br/iief5", "_blank");
   };
 
   return (
@@ -19,18 +21,27 @@ const IIEF5 = () => {
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.myclinic360.com.br/forms/iief-5" />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Avaliação IIEF-5 - Questionário de Saúde Masculina | MyClinic360" />
+        <meta property="og:description" content="Avalie sua saúde masculina de forma confidencial com o questionário IIEF-5. Reconhecido mundialmente por profissionais de saúde." />
+        <meta property="og:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
+        <meta property="og:url" content="https://www.myclinic360.com.br/forms/iief-5" />
+        <meta property="og:site_name" content="MyClinic360" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Avaliação IIEF-5 - Questionário de Saúde Masculina | MyClinic360" />
+        <meta name="twitter:description" content="Avalie sua saúde masculina de forma confidencial com o questionário IIEF-5." />
+        <meta name="twitter:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        {/* Header simples */}
-        <header className="py-4 px-4 sm:px-6 border-b border-border/50">
-          <div className="container mx-auto flex justify-center">
-            <img src={logo} alt="MyClinic360" className="h-8" />
-          </div>
-        </header>
+        <FormHeader onCtaClick={handleStartAssessment} />
 
         {/* Hero Section */}
-        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <section className="pt-28 sm:pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6">
           <div className="container mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
