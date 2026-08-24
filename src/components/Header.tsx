@@ -1,13 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ImgHTMLAttributes } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
 
+// React 18 não reconhece a prop camelCase `fetchPriority` (só a partir do React 19),
+// então passamos o atributo em minúsculas direto para o DOM.
+const highPriority = { fetchpriority: "high" } as ImgHTMLAttributes<HTMLImageElement>;
+
 const navLinks = [
-  { label: "Benefícios", href: "#diferenciais" },
+  { label: "Home", href: "/", isPage: true },
+  { label: "Funcionalidades", href: "/funcionalidades", isPage: true },
   { label: "Questionários", href: "#questionarios" },
-  { label: "Perfil Público", href: "#perfil-publico" },
   { label: "Para Quem", href: "#publico" },
   { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "/contato", isPage: true },
@@ -45,7 +49,7 @@ export function Header() {
               height="48"
               loading="eager"
               decoding="async"
-              fetchPriority="high"
+              {...highPriority}
             />
           </Link>
 
@@ -81,7 +85,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Button size="sm" className="rounded-full group" asChild>
               <a href="https://appmyclinic360.com.br/login" target="_blank" rel="noopener noreferrer">
-                Começar agora
+                Já tenho acesso
                 <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5" />
               </a>
             </Button>
@@ -134,7 +138,7 @@ export function Header() {
           <div className="flex flex-col gap-2 pt-4 mt-2 border-t border-border/30">
             <Button className="w-full justify-center rounded-full group" asChild>
               <a href="https://appmyclinic360.com.br/login" target="_blank" rel="noopener noreferrer">
-                Começar agora
+                Já tenho acesso
                 <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5" />
               </a>
             </Button>

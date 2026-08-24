@@ -1,4 +1,4 @@
-import { ArrowRight, Play, Check, Users, Calendar, FileText, TrendingUp, Plus } from "lucide-react";
+import { ArrowRight, Check, Users, Calendar, FileText, TrendingUp, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 export function Hero() {
   return <section className="relative pt-24 pb-20 sm:py-28 lg:py-40 overflow-hidden bg-mesh">
@@ -104,12 +104,6 @@ export function Hero() {
                 <a href="https://appmyclinic360.com.br/login" target="_blank" rel="noopener noreferrer">
                   Começar agora
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" />
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" className="group rounded-full px-6 sm:px-8 w-full sm:w-auto" asChild>
-                <a href="https://appmyclinic360.com.br/login" target="_blank" rel="noopener noreferrer">
-                  <Play className="w-4 h-4 mr-2 fill-current" />
-                  Ver demonstração
                 </a>
               </Button>
             </div>

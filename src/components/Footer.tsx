@@ -7,13 +7,13 @@ const links = {
     href: "/beneficios"
   }, {
     label: "Para Quem",
-    href: "/para-quem"
+    href: "/#publico"
   }, {
     label: "Diferenciais",
     href: "/diferenciais"
   }, {
     label: "FAQ",
-    href: "/faq"
+    href: "/#faq"
   }],
   legal: [{
     label: "Termos de Uso",

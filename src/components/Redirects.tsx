@@ -7,9 +7,11 @@ const redirectMap: Record<string, string> = {
   "/termos de uso": "/termos-de-uso",
   "/privacidade": "/politica-de-privacidade",
   "/politica de privacidade": "/politica-de-privacidade",
+  "/politica-de-privacidade": "/politica-de-privacidade",
   "/lgpd": "/politica-de-privacidade",
   "/beneficios": "/#diferenciais",
   "/diferenciais": "/#diferenciais",
+  "/waitlist": "/",
 };
 
 export const useRedirects = () => {
@@ -18,10 +20,10 @@ export const useRedirects = () => {
 
   useEffect(() => {
     const path = decodeURIComponent(location.pathname.toLowerCase());
-    
-    // Verifica se é uma URL de blog (não existe no site)
+
+    // URLs de blog nunca existiram — deixar cair no 404 (noindex) para
+    // que o Google remova do índice em vez de tratar como redirecionamento.
     if (path.startsWith("/blog")) {
-      navigate("/", { replace: true });
       return;
     }
 

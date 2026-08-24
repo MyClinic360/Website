@@ -1,16 +1,27 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /blog
+Disallow: /admin
 
 User-agent: Bingbot
 Allow: /
+Disallow: /blog
+Disallow: /admin
 
 User-agent: Twitterbot
 Allow: /
+Disallow: /blog
+Disallow: /admin
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /blog
+Disallow: /admin
 
 User-agent: *
 Allow: /
+Disallow: /blog
+Disallow: /admin
+Disallow: /*?q=
 
 Sitemap: https://www.myclinic360.com.br/sitemap.xml

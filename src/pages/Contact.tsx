@@ -75,6 +75,20 @@ export default function Contact() {
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.myclinic360.com.br/contato" />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contato — MyClinic360" />
+        <meta property="og:description" content="Entre em contato com a MyClinic360. Fale com nossa equipe." />
+        <meta property="og:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
+        <meta property="og:url" content="https://www.myclinic360.com.br/contato" />
+        <meta property="og:site_name" content="MyClinic360" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contato — MyClinic360" />
+        <meta name="twitter:description" content="Entre em contato com a MyClinic360." />
+        <meta name="twitter:image" content="https://www.myclinic360.com.br/og-myclinic360.jpg?v=3" />
       </Helmet>
 
       <div className="min-h-screen bg-background relative overflow-hidden">
