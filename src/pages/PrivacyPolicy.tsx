@@ -1,9 +1,12 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { useEmbedMode } from "@/hooks/use-embed-mode";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const PrivacyPolicy = () => {
+  const isEmbed = useEmbedMode();
+
   return (
     <>
       <Helmet>
@@ -523,7 +526,7 @@ const PrivacyPolicy = () => {
           </div>
         </main>
 
-        <Footer />
+        {!isEmbed && <Footer />}
       </div>
     </>
   );
