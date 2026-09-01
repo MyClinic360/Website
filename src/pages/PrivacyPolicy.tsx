@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { useEmbedMode } from "@/hooks/use-embed-mode";
+import { embedPath, useEmbedMode } from "@/hooks/use-embed-mode";
 import { cn } from "@/lib/utils";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -56,7 +56,7 @@ const PrivacyPolicy = () => {
                     www.myclinic360.com.br
                   </a>{" "}
                   e no sistema disponibilizado nele. Ela complementa os{" "}
-                  <Link to="/termos-de-uso" className="text-primary hover:underline">
+                  <Link to={embedPath("/termos-de-uso", isEmbed)} className="text-primary hover:underline">
                     Termos de Uso
                   </Link>{" "}
                   e usa as mesmas definições adotadas lá.
