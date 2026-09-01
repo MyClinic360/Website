@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useEmbedMode } from "@/hooks/use-embed-mode";
+import { cn } from "@/lib/utils";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
@@ -31,9 +32,9 @@ const PrivacyPolicy = () => {
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">
-        <Header />
+        {!isEmbed && <Header />}
 
-        <main className="flex-1 pt-24 pb-16">
+        <main className={cn("flex-1 pb-16", isEmbed ? "pt-6" : "pt-24")}>
           <div className="container max-w-4xl mx-auto px-4">
             <article className="prose prose-lg max-w-none">
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
