@@ -8,10 +8,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { embedPath, useEmbedMode } from "@/hooks/use-embed-mode";
 import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/logo.svg";
+import { cn } from "@/lib/utils";
 
 export default function Support() {
+  const isEmbed = useEmbedMode();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -103,25 +106,33 @@ export default function Support() {
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-accent/30 rounded-full blur-[100px] pointer-events-none" />
 
         {/* Header */}
-        <header className="relative z-10 py-6">
-          <div className="container mx-auto px-6">
-            <div className="flex items-center justify-between">
-              <Link to="/" className="flex items-center">
-                <img src={logo} alt="MyClinic360" className="h-10 md:h-12" />
-              </Link>
-              <Link
-                to="/"
-                className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Voltar
-              </Link>
+        {!isEmbed && (
+          <header className="relative z-10 py-6">
+            <div className="container mx-auto px-6">
+              <div className="flex items-center justify-between">
+                <Link to="/" className="flex items-center">
+                  <img src={logo} alt="MyClinic360" className="h-10 md:h-12" />
+                </Link>
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Voltar
+                </Link>
+              </div>
             </div>
-          </div>
-        </header>
+          </header>
+        )}
 
         {/* Main Content */}
-        <main className="relative z-10 py-12 md:py-20" role="main">
+        <main
+          className={cn(
+            "relative z-10",
+            isEmbed ? "py-6 md:py-8" : "py-12 md:py-20",
+          )}
+          role="main"
+        >
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto">
               <motion.div
@@ -257,7 +268,7 @@ export default function Support() {
 
                     <p className="text-xs text-muted-foreground text-center">
                       Ao enviar, você concorda com nossa{" "}
-                      <Link to="/politica-de-privacidade" className="text-primary hover:underline">
+                      <Link to={embedPath("/politica-de-privacidade", isEmbed)} className="text-primary hover:underline">
                         Política de Privacidade
                       </Link>
                     </p>
