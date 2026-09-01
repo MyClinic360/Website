@@ -1,12 +1,13 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { embedPath, useEmbedMode } from "@/hooks/use-embed-mode";
+import { embedPath, useEmbedMode, useLegalEmbedReady } from "@/hooks/use-embed-mode";
 import { cn } from "@/lib/utils";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const TermsOfUse = () => {
   const isEmbed = useEmbedMode();
+  useLegalEmbedReady(isEmbed);
 
   return (
     <>

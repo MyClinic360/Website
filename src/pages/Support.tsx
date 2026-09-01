@@ -8,13 +8,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
-import { embedPath, useEmbedMode } from "@/hooks/use-embed-mode";
+import { embedPath, useEmbedMode, useLegalEmbedReady } from "@/hooks/use-embed-mode";
 import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/logo.svg";
 import { cn } from "@/lib/utils";
 
 export default function Support() {
   const isEmbed = useEmbedMode();
+  useLegalEmbedReady(isEmbed);
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
