@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { useEmbedMode } from "@/hooks/use-embed-mode";
+import { embedPath, useEmbedMode } from "@/hooks/use-embed-mode";
 import { cn } from "@/lib/utils";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -169,7 +169,7 @@ const TermsOfUse = () => {
                 </p>
                 <p className="text-foreground/80 leading-relaxed">
                   O detalhamento completo sobre coleta, finalidade, base legal, compartilhamento, retenção e exercício de direitos do titular está na{" "}
-                  <Link to="/politica-de-privacidade" className="text-primary hover:underline">
+                  <Link to={embedPath("/politica-de-privacidade", isEmbed)} className="text-primary hover:underline">
                     Política de Privacidade
                   </Link>.
                 </p>
