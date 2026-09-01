@@ -14,3 +14,8 @@ export function useEmbedMode(): boolean {
     return explicitEmbed || inIframe;
   }, [searchParams]);
 }
+
+/** Preserva o layout embed ao navegar entre páginas legais no iframe. */
+export function embedPath(path: string, isEmbed: boolean): string {
+  return isEmbed ? `${path}?embed=1` : path;
+}
