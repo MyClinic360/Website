@@ -20,11 +20,23 @@ export function useEmbedMode(): boolean {
 /** Notifica o parent (app Flutter) que o conteúdo embed está pronto. */
 export function useLegalEmbedReady(isEmbed: boolean) {
   useEffect(() => {
+    if (!isEmbed) return;
+
+    document.documentElement.classList.add("legal-embed");
+    document.body.classList.add("legal-embed");
+
+    return () => {
+      document.documentElement.classList.remove("legal-embed");
+      document.body.classList.remove("legal-embed");
+    };
+  }, [isEmbed]);
+
+  useEffect(() => {
     if (!isEmbed || window.parent === window) return;
 
     window.parent.postMessage(
       LEGAL_EMBED_READY_MESSAGE,
-      window.location.origin,
+      "*",
     );
   }, [isEmbed]);
 }
