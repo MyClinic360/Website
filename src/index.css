@@ -240,3 +240,9 @@
     opacity: 0.5;
   }
 }
+
+/* Modo embed no iframe do app Flutter — oculta navegação para a landing */
+html.legal-embed header,
+body.legal-embed header {
+  display: none !important;
+}
